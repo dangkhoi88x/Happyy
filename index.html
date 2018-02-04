@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Chúc mừng sinh nhật - Ngọc </title>
+     <meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css">
+<head>
+<meta name="description" content="Say Happy Birthday to Phuong Li ">
+<meta name="author" content="HTT ZIP">
+<meta property="og:url" content="http://httzip.me/phuongli/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Say Happy Birthday Phuong Li ">
+<meta property="og:image" content="http://httzip.me/phuongli/graph.png"/>
+<meta property="og:description" content="Gửi lời mừng sinh nhật Phương Li ">
+<meta property="og:site_name" content="http://httzip.me/phuongli/">
+<meta property="article:author" content="https://www.facebook.com/httzip">
+<meta property="article:publisher" content="https://www.facebook.com/httzip">
+<meta property="fb:admins" content="100004061834192"/>
+<meta property="fb:app_id" content="671928226285384" />
+<link rel="icon" href="img/gift-multi-size.ico" type="image/x-icon" />
+<link rel='stylesheet' href='style.css'>
+</head>
+<style type="text/css">
+  .dialog-birthday_message {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 5%;
+  z-index: -1;   
+  width: 100%;
+  height:auto;
+    -webkit-transform: none;
+    margin: auto;
+}
+.birthday_container {
+  position: relative;
+  margin: 0 auto;  
+  width: 100%;
+  height:100%;
+  display: block;
+  background:transparent;
+  overflow: hidden;
+}
+.balloons {
+  z-index:1;
+  position:fixed;
+  left: 38%;
+
+}
+.birthday_container h1 {
+  z-index:1;
+  position:absolute;
+  bottom:40px;
+  font-weight: 500;
+  font-size: 28px;
+ margin:0 auto;
+  width:100%;
+  text-align:center;
+}.birthday_container small {
+  z-index:1;
+  position:absolute;
+  bottom:70px;
+  font-weight: 500;
+  font-size: 18px;
+ margin:0 auto;
+  width:100%;
+  text-align:center;
+}.birthday_container p {
+  z-index:1;
+  position:absolute;
+  bottom:70px;
+  font-weight: 500;
+  font-size: 18px;
+ margin:0 auto;
+  width:100%;
+  text-align:center;
+}
+#canvas_confetti {
+  display:inline-block;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:0;
+  width: 100%;
+  height: 100%;
+}
+.balloon {
+  display: inline-block;
+  width: 50px;
+  height: 60px;
+  background: hsl(215, 50%, 65%);
+  background: rgba(102, 145, 204,1);
+  border-radius: 80%;
+  position: relative;
+  box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);  
+  margin: 10px 1px;
+  transition: transform 0.5s ease;
+  z-index: 2;
+  animation: balloons 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes balloons {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+
+.balloon:before {
+  content: "▲";
+  font-size: 20px;
+  color: hsl(215, 30%, 50%);
+  color: rgba(88, 125, 176,1);
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: -13px;
+  z-index: -100;
+}
+
+.balloon:after {  
+  display: inline-block;
+  top: 65px;
+  position: absolute;
+  height: 100px;
+  width: 2px;
+  margin: 0 auto;
+  left:24px;
+  
+  content: "";
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ballon:nth-child(1) {
+  box-shadow: inset -10px -10px 0 rgba(88, 125, 176,1);
+}
+.balloon:nth-child(2) {
+  background: hsl(245, 40%, 65%);
+  animation-duration: 3.5s;
+}
+
+.balloon:nth-child(2):before {
+  color: hsl(245, 40%, 65%);
+}
+
+.balloon:nth-child(3) {
+  background: hsl(139, 50%, 60%);
+  animation-duration: 3s;
+}
+
+.balloon:nth-child(3):before {
+  color: hsl(139, 30%, 50%);
+}
+
+.balloon:nth-child(4) {
+  background: hsl(59, 50%, 58%);
+  animation-duration: 4.5s;
+}
+
+.balloon:nth-child(4):before {
+  color: hsl(59, 30%, 52%);
+}
+
+.balloon:nth-child(5) {
+  background: hsl(23, 55%, 57%);
+  animation-duration: 5s;
+}
+
+.balloon:nth-child(5):before {
+  color: hsl(23, 44%, 46%);
+}
+canvas {
+  width: 100%;
+  height: auto;
+}
+.img-responsive{
+  display: block;
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  font-weight: 400;
+  margin: 0;
+  font-size: 16px;
+  white-space: nowrap;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+@media (min-width: 37.5em) {
+  h1 {
+    font-size: 64px;
+  }
+}
+h1 span {
+  display: inline-block;
+  margin: 0 4px;
+  -webkit-animation: 2s ease-in-out infinite move;
+          animation: 2s ease-in-out infinite move;
+}
+h1 span:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+h1 span:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+h1 span:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+h1 span:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+h1 span:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+h1 span:nth-child(6) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+h1 span:nth-child(7) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+h1 span:nth-child(8) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+h1 span:nth-child(9) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+h1 span:nth-child(10) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+h1 span:nth-child(11) {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+h1 span:nth-child(12) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+h1 span:nth-child(13) {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+h1 span:nth-child(14) {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+@-webkit-keyframes move {
+  50% {
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px);
+  }
+}
+
+@keyframes move {
+  50% {
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px);
+  }
+}
+.fa {
+  color: red;
+  opacity: .3;
+  -webkit-animation: 1s ease grow infinite;
+          animation: 1s ease grow infinite;
+}
+body .fa:nth-child(1) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+body .fa:nth-child(2) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+body .fa:nth-child(3) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+body .fa:nth-child(4) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+body .fa:nth-child(5) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+body .fa:nth-child(6) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+body .fa:nth-child(7) {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+body .fa:nth-child(8) {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+body .fa:nth-child(9) {
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+body .fa:nth-child(10) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+body .fa:nth-child(11) {
+  -webkit-animation-delay: 3.3s;
+          animation-delay: 3.3s;
+}
+body .fa:nth-child(12) {
+  -webkit-animation-delay: 3.6s;
+          animation-delay: 3.6s;
+}
+body .fa:nth-child(13) {
+  -webkit-animation-delay: 3.9s;
+          animation-delay: 3.9s;
+}
+body .fa:nth-child(14) {
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+body .fa:nth-child(15) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+body .fa:nth-child(16) {
+  -webkit-animation-delay: 4.8s;
+          animation-delay: 4.8s;
+}
+body .fa:nth-child(17) {
+  -webkit-animation-delay: 5.1s;
+          animation-delay: 5.1s;
+}
+body .fa:nth-child(18) {
+  -webkit-animation-delay: 5.4s;
+          animation-delay: 5.4s;
+}
+body .fa:nth-child(19) {
+  -webkit-animation-delay: 5.7s;
+          animation-delay: 5.7s;
+}
+body .fa:nth-child(20) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+body .fa:nth-child(21) {
+  -webkit-animation-delay: 6.3s;
+          animation-delay: 6.3s;
+}
+body .fa:nth-child(22) {
+  -webkit-animation-delay: 6.6s;
+          animation-delay: 6.6s;
+}
+body .fa:nth-child(23) {
+  -webkit-animation-delay: 6.9s;
+          animation-delay: 6.9s;
+}
+body .fa:nth-child(24) {
+  -webkit-animation-delay: 7.2s;
+          animation-delay: 7.2s;
+}
+body .fa:nth-child(25) {
+  -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+}
+body .fa:nth-child(26) {
+  -webkit-animation-delay: 7.8s;
+          animation-delay: 7.8s;
+}
+body .fa:nth-child(27) {
+  -webkit-animation-delay: 8.1s;
+          animation-delay: 8.1s;
+}
+body .fa:nth-child(28) {
+  -webkit-animation-delay: 8.4s;
+          animation-delay: 8.4s;
+}
+body .fa:nth-child(29) {
+  -webkit-animation-delay: 8.7s;
+          animation-delay: 8.7s;
+}
+body .fa:nth-child(30) {
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+body .fa:nth-child(31) {
+  -webkit-animation-delay: 9.3s;
+          animation-delay: 9.3s;
+}
+body .fa:nth-child(32) {
+  -webkit-animation-delay: 9.6s;
+          animation-delay: 9.6s;
+}
+body .fa:nth-child(33) {
+  -webkit-animation-delay: 9.9s;
+          animation-delay: 9.9s;
+}
+body .fa:nth-child(34) {
+  -webkit-animation-delay: 10.2s;
+          animation-delay: 10.2s;
+}
+body .fa:nth-child(35) {
+  -webkit-animation-delay: 10.5s;
+          animation-delay: 10.5s;
+}
+body .fa:nth-child(36) {
+  -webkit-animation-delay: 10.8s;
+          animation-delay: 10.8s;
+}
+body .fa:nth-child(37) {
+  -webkit-animation-delay: 11.1s;
+          animation-delay: 11.1s;
+}
+body .fa:nth-child(38) {
+  -webkit-animation-delay: 11.4s;
+          animation-delay: 11.4s;
+}
+body .fa:nth-child(39) {
+  -webkit-animation-delay: 11.7s;
+          animation-delay: 11.7s;
+}
+body .fa:nth-child(40) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+body .fa:nth-child(41) {
+  -webkit-animation-delay: 12.3s;
+          animation-delay: 12.3s;
+}
+body .fa:nth-child(42) {
+  -webkit-animation-delay: 12.6s;
+          animation-delay: 12.6s;
+}
+body .fa:nth-child(43) {
+  -webkit-animation-delay: 12.9s;
+          animation-delay: 12.9s;
+}
+body .fa:nth-child(44) {
+  -webkit-animation-delay: 13.2s;
+          animation-delay: 13.2s;
+}
+body .fa:nth-child(45) {
+  -webkit-animation-delay: 13.5s;
+          animation-delay: 13.5s;
+}
+body .fa:nth-child(46) {
+  -webkit-animation-delay: 13.8s;
+          animation-delay: 13.8s;
+}
+body .fa:nth-child(47) {
+  -webkit-animation-delay: 14.1s;
+          animation-delay: 14.1s;
+}
+body .fa:nth-child(48) {
+  -webkit-animation-delay: 14.4s;
+          animation-delay: 14.4s;
+}
+body .fa:nth-child(49) {
+  -webkit-animation-delay: 14.7s;
+          animation-delay: 14.7s;
+}
+body .fa:nth-child(50) {
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+
+@-webkit-keyframes grow {
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@keyframes grow {
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+</style>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=685792338201575";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="dialog-birthday_message">
+  <div id="birthday_container" class="birthday_container">
+  <div class="balloons">
+    <div class="balloon">H</div>
+    <div class="balloon">B</div>
+    <div class="balloon">D</div>
+    <div class="balloon">A</div>
+    <div class="balloon">Y</div>
+  </div>
+
+  <h1>Happy Birthday, Hồ Lưu Bảo Ngọc! </h1> <hr>
+  <small>  Make with <i class="fa fa-heart text-danger"></i> by NĐK</small>
+ <p id="txt"></p>
+ 
+  <canvas id="canvas_confetti">
+    
+  </canvas>
+
+</div>
+</div>
+
+<img class="img img-responsive img-circle" src="img/girl.jpg" style="max-width: 150px"alt="">
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js'></script>
+<script type="text/javascript">
+          //Setup canvas by creating in doc
+        var canvas = document.getElementById('canvas_confetti');
+        var context = canvas.getContext('2d');
+        canvas.width = document.getElementById('birthday_container').clientWidth;
+        canvas.height = document.getElementById('birthday_container').clientHeight;
+        //document.body.appendChild(canvas);
+ document.getElementById('birthday_container').appendChild(canvas);
+        var calculatedDensity = canvas.width * 0.0085;
+        var calculatedVelocity = canvas.width * 0.0037;
+        var calculatedLife = canvas.height * .65;
+        var calculatedStartingX = canvas.width / 2;
+
+
+        //Generating many particles
+        //Make object with settings for function
+        var particles = {},
+            particleIndex = 0,
+            settings = {
+                density: calculatedDensity,
+                particleSize: 8,
+                particleSizeVariety: 1.5,
+                startingX: calculatedStartingX,
+                startingY: -20,
+                velX: calculatedVelocity,
+                velY:2,
+                gravity: 0.015,
+                //maxLife: 300,
+                maxLife: calculatedLife,
+                particleColours: ["#F06292","#BA68C8","#64B5F6","#4DD0E1","#81C784","#DCE775","#FFD54F","#FF8A65","#EEEEEE"]
+            };
+
+        //Function that will create particles
+        function Particle() {
+            //Starting positions and velocities
+            this.x = settings.startingX;
+            this.y = settings.startingY;
+            //Random X and Y velocities
+            this.vx = (Math.random() * (settings.velX)) - (settings.velX/2);
+            this.vy = (Math.random() * (settings.velY)) - (settings.velY/2);
+            //this.vx = 10;
+            //this.vy = 10;
+
+            //Set up rotation & center of origin
+            this.rot = 0;
+            this.centerOfOriginX = -this.particleSize/2;
+            this.centerOfOriginY = -this.particleSize/4;
+
+            this.particleSize = parseInt((Math.random()*(settings.particleSizeVariety*2)) + settings.particleSize);
+
+            //Choose a random colour
+            this.particleColor = settings.particleColours[parseInt(Math.random()*settings.particleColours.length)];
+
+            //Add new particle to index - this is a way to store the particles created
+            particleIndex++;
+            particles[particleIndex] = this;
+            this.id = particleIndex;
+            //Will be used later to remove particle
+            this.life = -10 + parseInt(Math.random()*20);
+        }
+
+        //Add a 'draw' method to the Particle function
+        Particle.prototype.draw = function() {
+
+            this.x += this.vx;
+            this.y += this.vy;
+
+            //calculate rotation
+            var period = 100;
+            this.rot += Math.sin(this.life * 2 * Math.PI / period)/2 * (Math.random()*2);
+
+            //Add gravity
+            this.vy += settings.gravity;
+
+            //Age the particle by adding to 'life'
+            this.life++;
+
+            //Remove the particle if it's old
+            if (this.life >= settings.maxLife) {
+                delete particles[this.id];
+            }
+
+            //Create shape
+            context.clearRect(0, settings.groundLevel, canvas.width, canvas.height);
+            context.beginPath();
+            context.fillStyle = this.particleColor;
+            //save context position
+            context.save();
+            context.translate(this.x,this.y);
+
+            var rotationAmount = 5;
+            //rotate by sine value
+            context.rotate(this.rot/rotationAmount);
+
+            //translate to near random center of origin
+            context.translate(this.centerOfOriginX,this.centerOfOriginY);
+            //context.translate(0,0);
+
+            context.globalAlpha = 0.9;
+            context.fillRect(0,0,this.particleSize,this.particleSize/2);
+            context.restore();
+        }
+
+        //Set up interval to draw particles
+        setInterval(function() {
+            //Fillstyle transparency adds motion trails
+            //#673AB7 purple
+            //#2196F3 blue
+            //#009688 teal
+            //#FFEB3B yellow
+            // "rgba(39,174,96,.98)"; green
+            context.fillStyle = '#f7fcfd'
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the particles
+            for (var i = 0; i < settings.density; i++) {
+                // Random chance of creating a particle corresponding to an chance of 1 per second per "density" value
+                if (Math.random() > 0.97) {
+                  new Particle();
+                }
+            }
+
+            //Use the draw method for all the particles in particles[]
+            for (var i in particles) {
+              particles[i].draw();
+            }
+        }, 16);
+    
+</script>
+<script type="text/javascript">
+  $( document ).ready(function() {
+
+    var c=document.getElementById("canvas_confetti");
+    var ctx=c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95,50,40,0,2*Math.PI);
+    ctx.stroke();
+
+});
+</script>
+<script type="text/javascript">
+  $('h1').lettering();
+
+var WIN_WIDTH = window.innerWidth;
+var WIN_HEIGHT = window.innerHeight;
+
+for (var i = 0; i < 50; i++) {if (window.CP.shouldStopExecution(1)){break;}if (window.CP.shouldStopExecution(1)){break;}
+  var heart = createHeart();
+  document.body.appendChild(heart);
+}
+window.CP.exitedLoop(1);
+
+window.CP.exitedLoop(1);
+
+
+function createHeart() {
+  var heart = document.createElement('span');
+  heart.classList.add('fa', 'fa-fw', 'fa-heart');
+  heart.style.position = 'absolute';
+  heart.style.display = 'block';
+  heart.style.top = Math.random() * WIN_HEIGHT + 'px';
+  heart.style.left = Math.random() * WIN_WIDTH + 'px';
+
+  return heart;
+}
+</script>
+<script src="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.js"></script>
+<script src="https://mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+<script src="js.main.js"></script>
+
+
+<!-- <script src="js.main.js"></script> -->
+<div style="display:none">
+
+<iframe width="300" height="84" src="nhac.mp3" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<script>
+  $(function(){
+
+    $("#txt").typed({
+      strings: ["Chúc Mừng Sinh Nhật Hồ Lưu Bảo Ngọc ( Tiểu Thư )" ,"Chúc Ngọc Sinh nhật đầy ấp yêu thuơng và tiếng cười, thêm tuổi, thêm hạnh phúc !","Chúc Ngọc gặp nhiều niềm vui trong cuộc sống nhé !","Best Wishes For Ngọc !"],
+      typeSpeed: 30,
+      smartBackspace: true
+    });
+
+  });
+</script>
+</html>
